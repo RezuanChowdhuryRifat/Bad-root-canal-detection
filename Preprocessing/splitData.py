@@ -9,8 +9,8 @@ source_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Denoised Plat ptf a
 train_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Yolo dataset/images/train/"  # path to folder where train images will be saved
 test_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Yolo dataset/images/test/"   # path to folder where test images will be saved
 val_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Yolo dataset/images/val/"   # path to folder where validation images will be saved
-train_split = 0.75  # percentage of data to use for training
-test_split = 0.15  # percentage of data to use for testing
+train_split = 0.7  # percentage of data to use for training
+test_split = 0.2  # percentage of data to use for testing
 val_split = 0.1  # percentage of data to use for validation
 
 # Get a list of all image filenames in the source folder
