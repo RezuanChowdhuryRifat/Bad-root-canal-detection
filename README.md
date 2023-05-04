@@ -12,8 +12,8 @@ Dataset collected from an anonymous hospital and labelled by medical professiona
 
 
 ### Results
-| Model  | mAP 0.5 |  
-| ------------- | ------------- | 
-|  |  | 
+| Model  | mAP 0.5 |  precision|
+| ------------- | ------------- | ---------|
+| YOLOv7 | 0.684 | 0.82
 |  |  |
 |  |   |
