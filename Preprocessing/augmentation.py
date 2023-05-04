@@ -108,16 +108,14 @@ def writeYolo(coords, count, name):
 
 def getTransform():
     transform = A.Compose([
-            A.HorizontalFlip(p=1),
-            A.RandomBrightnessContrast(p=1),
-            A.geometric.rotate.Rotate (limit=90, interpolation=1, border_mode=4, rotate_method='largest_box',
-                                       crop_border=False, p=1),
-            A.VerticalFlip(p=1),
-            A.Blur(blur_limit=(10, 10), p=1),
-            A.RandomRotate90(p=1),
-            A.BBoxSafeRandomCrop(erosion_rate=0.0, p=1),
-            A.Transpose(p=1)
-        ], bbox_params=A.BboxParams(format='yolo'))
+            A.HorizontalFlip(p=0.5),
+            A.VerticalFlip(p=0.5),
+            A.GaussianBlur(always_apply=False, p=0.5, blur_limit=(3, 5)),
+            A.RandomRotate90(p=0.5),
+            A.NoOp(p=0.5),
+            A.SafeRotate(always_apply=False, p=0.5, limit=(-70, 70), interpolation=0, border_mode=0, value=(0, 0, 0), mask_value=None),
+            A.HueSaturationValue(always_apply=False, p=0.5, hue_shift_limit=(-20, 20), sat_shift_limit=(-30, 30), val_shift_limit=(-20, 
+               ], bbox_params=A.BboxParams(format='yolo'))
 
     return transform
 
