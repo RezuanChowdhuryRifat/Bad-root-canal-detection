@@ -40,4 +40,67 @@ for filename in val_images:
 
 
 
+# Set the paths to the image and text file folders
+image_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Yolo dataset/images/train/"
+text_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Labelled malpractice images ptf a11"
+output_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Yolo dataset/labels/train"
 
+# Read in the images from the image folder and store them in a list
+image_list = []
+for file_name in os.listdir(image_folder):
+    if file_name.endswith(".jpg") or file_name.endswith(".png"):
+        image_list.append(os.path.splitext(file_name)[0])
+
+# Look for text files in the text folder that have a matching filename in the image list
+for file_name in os.listdir(text_folder):
+    if file_name.endswith(".txt"):
+        base_name = os.path.splitext(file_name)[0]
+        if base_name in image_list:
+            # Copy the text file to the output folder
+            source_path = os.path.join(text_folder, file_name)
+            dest_path = os.path.join(output_folder, file_name)
+            with open(source_path, 'rb') as source_file, open(dest_path, 'wb') as dest_file:
+                dest_file.write(source_file.read())
+
+
+image_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Yolo dataset/images/test/"
+text_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Labelled malpractice images ptf a11"
+output_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Yolo dataset/labels/test"
+
+# Read in the images from the image folder and store them in a list
+image_list = []
+for file_name in os.listdir(image_folder):
+    if file_name.endswith(".jpg") or file_name.endswith(".png"):
+        image_list.append(os.path.splitext(file_name)[0])
+
+# Look for text files in the text folder that have a matching filename in the image list
+for file_name in os.listdir(text_folder):
+    if file_name.endswith(".txt"):
+        base_name = os.path.splitext(file_name)[0]
+        if base_name in image_list:
+            # Copy the text file to the output folder
+            source_path = os.path.join(text_folder, file_name)
+            dest_path = os.path.join(output_folder, file_name)
+            with open(source_path, 'rb') as source_file, open(dest_path, 'wb') as dest_file:
+                dest_file.write(source_file.read())
+
+image_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Yolo dataset/images/val/"
+text_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Labelled malpractice images ptf a11"
+output_folder = "C:/Users/rezua/Desktop/Radiographic Dataset/Yolo dataset/labels/val"
+
+# Read in the images from the image folder and store them in a list
+image_list = []
+for file_name in os.listdir(image_folder):
+    if file_name.endswith(".jpg") or file_name.endswith(".png"):
+        image_list.append(os.path.splitext(file_name)[0])
+
+# Look for text files in the text folder that have a matching filename in the image list
+for file_name in os.listdir(text_folder):
+    if file_name.endswith(".txt"):
+        base_name = os.path.splitext(file_name)[0]
+        if base_name in image_list:
+            # Copy the text file to the output folder
+            source_path = os.path.join(text_folder, file_name)
+            dest_path = os.path.join(output_folder, file_name)
+            with open(source_path, 'rb') as source_file, open(dest_path, 'wb') as dest_file:
+                dest_file.write(source_file.read())
